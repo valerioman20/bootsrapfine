@@ -1,0 +1,189 @@
+body {
+    background-color: rgb(20, 20, 20);
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.navbar-brand img {
+    width: 90px; 
+    height: auto; 
+}
+
+.navbar {
+    background-color: rgb(20, 20, 20)
+}
+.navbar .nav-link {
+    color: #ffffff; 
+}
+
+.navbar .nav-link.active {
+    color: #ffffff; 
+}
+
+#avatar{
+    width: 25px; 
+    height: auto; 
+}
+
+.navbar-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.navbar-icon i,
+.navbar-icon a,
+.navbar-icon img {
+    margin-right: 15px; 
+    font-size: 20px;
+}
+
+h2 {
+    color: #ffffff;
+    margin-right: 15px;
+
+}
+
+h6 {
+    color: #ffffff;
+    margin-left: 10px;
+
+}
+
+h5 {
+    color: #ffffff;
+    margin-left: 10px;
+ 
+
+}
+
+.dropdown .btn-secondary {
+    background-color:  rgb(20, 20, 20); 
+}
+
+.title {
+    padding: 0 22px;
+    margin-top: 20px;
+}
+
+.right-content{
+    color: #ffffff8e;
+    
+}
+.btn {
+    --bs-btn-border-radius: initial; /* Qui ho tolto il border radius al bottone di bootstrap */
+}
+
+.icon-1{
+    border: 1px solid rgba(255, 255, 255, 0.538);
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: small;
+}
+
+/* tolgo il flex wrap per far distribuire le immagini in fila su desktop */
+.row  {
+    flex-wrap: nowrap;
+    margin-left: 0; /*Elimino il margin left di bootsrap */
+}
+
+.col img {
+    max-width: 190px;
+    height: auto;
+}
+
+.row > * {
+    padding-right: 0;
+}
+
+.container-fluid .row {
+    overflow: hidden; /* Nascondo il contenuto che supera i limiti del contenitore */
+}
+
+.container-fluid .row .col img:hover {
+    cursor: pointer;
+}
+
+.dropdown-menu { 
+    background-color: #171616;
+    --bs-dropdown-link-color: #ffffff;
+}
+
+.footer-icon {
+    font-size: 25px;
+    margin-inline: 5px;
+    color: #ffffff6b;
+    margin-bottom: 10px;
+}
+
+.btn-dark {
+    --bs-btn-bg: transparent;
+    --bs-btn-color: rgba(255, 255, 255, 0.414);
+    margin-top: 20px;
+
+}
+
+
+.text-body-secondary {
+    --bs-text-opacity: 1;
+    color: white;
+}
+
+/* Rimetto il flex wrap con una media query per renderlo responsive */
+@media (max-width: 992px) {
+    .row {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: calc(-1* var(--bs-gutter-y));
+        margin-right: 0; 
+        margin-left: 0;
+    }
+    .col img {
+      margin: auto; 
+      display: block; 
+      margin-top: 5px;
+    }
+
+    .row > * {
+        padding-right: 0px;
+        padding-left: 0px; /* Rimuov0 il padding sinistro di bootsrap*/
+        margin-top: var(--bs-gutter-y); 
+    }
+
+    .row > .col {
+        flex: 0 0 50%; /* Ogni colonna occupa la metà della larghezza del contenitore padre per disporre le immagini in coppia quando rimpicciolisco lo schermo*/
+        max-width: 50%; 
+    }
+
+    .tag-section {  /* Faccio in modo che i titoli delle sezioni restino al centro su tablet e smartphone*/
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .tag-section h5 {
+        margin-bottom: 20px; 
+      }
+
+  }
+
+  @media (min-width: 1200px) {
+    .col img {
+        max-width: 280px; /* Dimensioni più grandi per le immagini su schermi larghi */
+    }
+}
+
+
+.container-fluid .row {
+    opacity: 0; /* Nascondo inizialmente le righe delle immagini */
+    transition: opacity 0.5s ease; /* Aggiungo una transizione per un effetto di dissolvenza */
+  }
+  
+  .container-fluid .row-visible {
+    opacity: 1; /* Mostra la riga quando diventa visibile */
+  }
+  
